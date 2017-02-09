@@ -16,6 +16,6 @@ module.exports = function(){
     });
 
     this.When(/^I click the search button$/, () => {
-        browser.click(examplePage.searchButton);
+        browser.submitForm(examplePage.formClass);
     });
 };

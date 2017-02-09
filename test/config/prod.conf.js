@@ -42,14 +42,14 @@ exports.config = {
     // from the same test should run tests.
     //
     capabilities: [
-        {
-            browserName: 'firefox',
-            platform: 'Windows 10',
-            version: '45.0',
-            'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-            build: process.env.TRAVIS_BUILD_NUMBER,
-            maxInstances: '1',
-        },
+        // {
+        //     browserName: 'chrome',
+        //     platform: 'Windows 10',
+        //     version: '45.0',
+        //     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+        //     build: process.env.TRAVIS_BUILD_NUMBER,
+        //     maxInstances: '1',
+        // },
         // {
         //     browserName: 'firefox',
         //     platform: 'OS X 10.11',
@@ -66,14 +66,14 @@ exports.config = {
         //     build: process.env.TRAVIS_BUILD_NUMBER,
         //     maxInstances: '1',
         // },
-        // {
-        //     browserName: 'Chrome',
-        //     platform: 'OS X 10.11',
-        //     version: '48.0',
-        //     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        //     build: process.env.TRAVIS_BUILD_NUMBER,
-        //     maxInstances: '1',
-        // },
+        {
+            browserName: 'chrome',
+            // platform: 'OS X 10.11',
+            // version: '48.0',
+            // 'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+            // build: process.env.TRAVIS_BUILD_NUMBER,
+            // maxInstances: '1',
+        },
         // {
         //     browserName: 'MicrosoftEdge',
         //     platform: 'Windows 10',
@@ -155,7 +155,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['sauce'],
+    // services: ['sauce'],
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
     //
@@ -170,12 +170,12 @@ exports.config = {
     // Test reporter for stdout.
     // The following are supported: dot (default), spec, and xunit
     // see also: http://webdriver.io/guide/testrunner/reporters.html
-    reporters: ['dot', 'allure'],
-    reporterOptions: {
-        allure: {
-            outputDir: './test/reports/allure-results/'
-        }
-    },
+    reporters: ['dot'],
+    // reporterOptions: {
+    //     allure: {
+    //         outputDir: './test/reports/allure-results/'
+    //     }
+    // },
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         require: ['./test/support/stepDefinitions/'],   // <string[]> (file/dir) require files before executing features
@@ -205,13 +205,13 @@ exports.config = {
     // resolved to continue.
     //
     // Gets executed once before all workers get launched.
-    onPrepare: function() {
-        require('babel-register')({
-            blacklist: [
-                'regenerator'
-            ]
-        });
-    },
+    // onPrepare: function() {
+    //     require('babel-register')({
+    //         blacklist: [
+    //             'regenerator'
+    //         ]
+    //     });
+    // },
     // Gets executed before test execution begins. At this point you can access all global
     // variables, such as `browser`. It is the perfect place to define custom commands.
     before: function() {

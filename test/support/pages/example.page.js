@@ -15,6 +15,7 @@ const examplePage = Object.create(Page, {
     googleUrl:          { value: 'https://www.google.com/' },
     searchInput:        { value: '#lst-ib' },
     searchButton:       { value: '.lsb' },
+    formClass:          { value: '.tsf' },
     resultsList:        { value: '#rso' },
 
 });
