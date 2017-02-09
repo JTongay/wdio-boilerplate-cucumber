@@ -3,6 +3,7 @@
  */
 
 const examplePage = require('../pages/example.page');
+const myPage = require('../pages/my.page');
 
 module.exports = function(){
 
@@ -10,4 +11,8 @@ module.exports = function(){
         browser.url(examplePage.googleUrl);
         browser.getTitle().should.equal(examplePage.googlePageTitle);
     });
+
+    this.Given(/^I am on Joey's portfolio$/, () => {
+        browser.url(myPage.myUrl);
+    })
 };

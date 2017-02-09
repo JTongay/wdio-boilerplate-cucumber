@@ -3,6 +3,7 @@
  */
 
 const examplePage = require('../pages/example.page');
+const myPage = require('../pages/my.page');
 
 module.exports = function(){
 
@@ -18,4 +19,8 @@ module.exports = function(){
     this.When(/^I click the search button$/, () => {
         browser.submitForm(examplePage.formClass);
     });
+
+    this.When(/^I click on the project titled "([^"]*)"$/, arg1 => {
+      browser.click(myPage.raspiImg);
+    })
 };
