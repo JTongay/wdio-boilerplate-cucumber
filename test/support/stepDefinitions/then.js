@@ -18,6 +18,9 @@ module.exports = function(){
     })
 
     this.Then(/^I should see the name "([^"]*)"$/, arg1 => {
-      return browser.getValue(myPage.h1Tag).should.equal(arg1);
+      console.log(myPage.h1Tag);
+      var innerHTML = browser.getHTML('h1', false)
+      console.log(innerHTML[2]);
+      return browser.getHTML('h1', false).should.equal(arg1);
     })
 };
